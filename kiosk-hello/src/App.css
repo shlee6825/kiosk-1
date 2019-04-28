@@ -1,0 +1,28 @@
+/*이 부분은 나중에 색 추가 해도 됩니다*/
+:root{
+  --mainBlue:#3b3b81;
+  --lightBlue:#009ffd;
+  --mainWhite:#f3f3f3;
+  --mainDark:#232528;
+  --mainYellow:#ffa400;
+   
+}
+body{
+  font-family: 'Gothic A1', sans-serif;
+  background: var(--mainWhite) !important;
+  color: var(--mainDark) !important;
+
+}
+
+.text-title{
+  font-family: 'Sunflower', sans-serif;
+;
+letter-spacing: 0.3rem;
+text-transform: uppercase;
+}
+.text-blue{
+  color: var(--mainBlue);
+}
+.text-bright{
+  color: var(--lightBlue);
+}
