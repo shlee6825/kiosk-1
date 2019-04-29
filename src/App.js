@@ -160,6 +160,8 @@ class Product extends Component {
 		var items = []
 		for (let i = 0; i < 9; i++)
 			items.push(new Item(storeProducts[i]).render())
+		for (let i = 0; i < 9; i++)
+			items.push(new Item(storeProducts[i]).render())
 
 		return (
 			<div className="container"> {items} </div>
