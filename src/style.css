@@ -192,12 +192,12 @@ Middle(Product) Part
 #product .container {
 	width: 1080px;
 	height: 1030px;
+	overflow-y: auto;
 
 	padding-top: 30px;
 	padding-bottom: 30px;
 	margin-left: 50px;
 	margin-right: 50px;
-	overflow-y: scroll;
 }
 #product .container .item {
 	display: inline;
