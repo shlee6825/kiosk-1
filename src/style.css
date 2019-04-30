@@ -189,12 +189,13 @@ Middle(Product) Part
 	overflow: hidden;
 	white-space: nowrap;
 }
-#product .main-commerce {
-	width: 1080px;
-	height: 1090px;
-}
 #product .container {
-	margin-top: 55px;
+	width: 1080px;
+	height: 1030px;
+	overflow-y: auto;
+
+	padding-top: 30px;
+	padding-bottom: 30px;
 	margin-left: 50px;
 	margin-right: 50px;
 }
@@ -202,7 +203,7 @@ Middle(Product) Part
 	display: inline;
 	float: left;
 	width: 300px;
-	height: 320px;
+	height: 350px;
 	background-color: #ffffff;
 	border-radius: 10px;
 	box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
@@ -242,6 +243,7 @@ Bottom(Cart) Part
 #cart {
 	width: 1080px;
 	height: 410px;
+
 	bottom: 0px;
 	font-size: 26px;
 }
