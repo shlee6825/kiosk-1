@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Header, Product, Cart } from './App.js';
+import { Cart } from './Cart.js';
+import { Header } from './Header.js';
+import { Product } from './Product.js';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
