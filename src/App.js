@@ -26,7 +26,7 @@ class Header extends Component {
 	}
 
 	navigator() {
-		var buttons = ["상점", "의사추천", "니미", "씨발"]
+		var buttons = ["상점", "의사추천", "헬로우", "월드"]
 
 		var categories = []
 		for (let i = 0; i < buttons.length; i++)
@@ -143,7 +143,7 @@ class Cart extends Component {
 
 class Product extends Component {
 	menu() {
-		var buttons = ["니미", "씨발", "좆같네", "엠창", "씨발년", "개새끼", "뒤져라", "병신"]
+		var buttons = ["강아지", "고양이", "당나귀", "개미", "치타", "사료", "장난감", "진화의돌"]
 
 		var menus = []
 		for (let i = 0; i < buttons.length; i++)
