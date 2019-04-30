@@ -3,7 +3,6 @@ import './style.css';
 
 import finder from './img/finder.svg';
 import banner from './img/main.png';
-import dog from './img/dog_image.png';
 import { detailProduct, storeProducts } from './data.js';
 
 class User extends Component {
@@ -73,6 +72,7 @@ class Item extends Component{
 			incart: false,
 
 			title: detail.title,
+			img: detail.img,
 			price: detail.price,
 			info: detail.info,
 		}
@@ -97,7 +97,7 @@ class Item extends Component{
 	render() {
 		return (
 			<button className="item" onClick={this.addcart}>
-				<img src={dog} className="item-image"/>
+				<img src={this.state.img} className="item-image"/>
 				<div className="description">
 					<div className="name">{this.state.title}</div>
 					<div className="price">{this.state.price}</div>
