@@ -212,9 +212,12 @@ Middle(Product) Part
 #product .container .item .item-image {
 	padding-top: 15px;
 	height: 240px;
+	width: 280px;
+	margin: auto;
+	padding: auto;
 }
 #product .container .item .description {
-	padding-top: 5px;
+	padding-top: 20px;
 	height: 80px;
 }
 #product .container .item .description .name {

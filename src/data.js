@@ -1,7 +1,5 @@
 /* DB입니다 */
 
-// import * from "./img";
-
 export const detailProduct = {
   id: 1,
   title: " 상세한 설명을 할 것이다",
