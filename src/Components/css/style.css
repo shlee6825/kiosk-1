@@ -1,54 +1,29 @@
-/*이 부분은 나중에 색 추가 해도 됩니다*/
-:root{
-  --mainBlue:#3b3b81;
-  --lightBlue:#009ffd;
-  --mainWhite:#f3f3f3;
-  --mainDark:#232528;
-  --mainYellow:#ffa400;
-   
-}
-body{
-  font-family: 'Gothic A1', sans-serif;
-  background: var(--mainWhite) !important;
-  color: var(--mainDark) !important;
+/* Table of Content
+==================================================
+#BASIC TYPOGRAPHY
+#HEADER SECTION
+#NAVBAR SECTION
+#SLIDER SECTION
+#PROMO SECTION
+#PRODUCT SECTION
+#BANNER SECTION
+#POPULAR SECTION
+#SUPPORT SECTION
+#LATEST BLOG SECTION
+#CLIENT BRAND SECTION
 
-}
-
-.text-title{
-  font-family: 'Sunflower', sans-serif;
-;
-letter-spacing: 0.3rem;
-text-transform: uppercase;
-}
-.text-blue{
-  color: var(--mainBlue);
-}
-.text-bright{
-  color: var(--lightBlue);
-}
-.btn-black{
-  background:transparent;
-  text-transform: capitalize;
-  font-size: 0.8rem !important;
-  color:var(--mainDark);
-  border-radius:0 !important;
-  border: 0.1rem solid var(--mainDark) !important;
-
-}
-.btn-black:hover{
-  background: var(--mainDark) !important;
-  color: var(--mainWhite) !important;
-}
-
-.cart-cion{
-  cursor: pointer;
-  font: size 1.2rem;
-  color: var(--mainYellow);
-
-}
-
-
-/*우영이 코드*/
+#PRODUCT PAGE
+#PRODUCT DETAILS PAGE
+#CART VIEW PAGE
+#CHECKOUT PAGE
+#MY ACCOUNT  PAGE
+#BLOG ARCHIVE  PAGE
+#BLOG DETAILS  PAGE
+#CONTACT  PAGE
+#ERROR  PAGE
+#FOOTER SECTION
+#RESPONSIVE DESIGN
+*/
 
 /* BASE - Base tyles, Variables, Mixins, etc. */
 html {
@@ -58,6 +33,64 @@ html {
 }
 
 body {
+  width: 1080px;
+  margin: 0px;
+  background-color: #ffffff;
+  font-family: "Lato", sans-serif;
+  color: #333333;
+  font-size: 16px;
+}
+ul {
+  float: left;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333333;
+}
+a:hover,
+a:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 40px;
+  margin: 0;
+  padding-bottom: 10px;
+}
+img {
+  border: none;
+}
+button {
+	border: 0px;
+}
+
+
+
+/*
+
+Top(Header) Part
+
+*/
+
+html {
+	width: 1080px;
+	height: 1920px;
+	overflow-x: scroll;
+}
+
+body {
+  width: 1080px;
   margin: 0px;
   background-color: #ffffff;
   font-family: "Lato", sans-serif;
@@ -138,21 +171,25 @@ Top(Header) Part
 	letter-spacing: -.483333px;
 }
 #header .category {
-	background-color: #e4e7e8;
+	background-color: transparent;
 	width: 1080px;
 	height: 80px;
+	float: left;
 }
-#header .category .category-button {
-	padding-top: 24px;
+#header .category li {
+	float: left;
+}
+#header .category li .category-button {
 	display: inline-block;
-	margin-left: 85px;
-	margin-right: 85px;
+	border-width: 1px;
+	background-color: #e4e7e8;
+	width: 270px;
+	height: 80px;
 
+	text-align: center;
+	color: #b1b1b1;
 	font-size: 30px;
 	font-weight: 500;
-}
-#header .category .category-button a {
-	color: #b1b1b1;
 }
 #header .find {
 	background-color: #f0f3f4;
@@ -201,6 +238,7 @@ Middle(Product) Part
 	width: 1080px;
 	height: 1150px;
 	background-color: #f0f3f4;
+	overflow: auto;
 }
 #product .menu {
 	width: 1080px;
@@ -216,18 +254,8 @@ Middle(Product) Part
 	font-size: 26px;
 	font-weight: 500;
 }
-#product .menu .menu-button li, a {
-	overflow: hidden;
-	white-space: nowrap;
-}
 #product .menu a {
 	color: #f2efef;
-	overflow: hidden;
-	white-space: nowrap;
-}
-#product .main-commerce {
-	width: 1080px;
-	height: 1090px;
 }
 #product .container {
 	margin-top: 55px;
@@ -244,8 +272,15 @@ Middle(Product) Part
 	box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
 	margin: 10px;
 }
-#product .container .item .item-image {
-	height: 240px;
+#product .container .item .image {
+	height: 40px;
+	width: auto;
+}
+#product .container .item .image_area{
+	height: 200px;
+	width: auto;
+	max-height: 100%;
+	max-width: 100%;
 }
 #product .container .item .description {
 	height: 80px;
@@ -278,23 +313,29 @@ Bottom(Cart) Part
 	height: 410px;
 	bottom: 0px;
 	font-size: 26px;
+	background-color: #ffffff;
 }
 #cart .cart-top {
 	height: 66px;
 	background-color: #9dc7c8;
 }
+#cart .cart-top .top-text {
+	text-align: center;
+	font-size: 28px;
+	font-weight: 500;
+	color: #ffffff;
+
+	position: relative;
+	top: 20%;
+	vertical-align: middle;
+	margin: auto;
+}
 #cart .cart-top .cancel-button {
-	border: 0px;
 	background-color: #f0f3f4;
 	border-radius: 10px;
-	box-shadow: 3px 3px 3px rgba(0, 0, 0, .16);
-	width: 180px;
+	width: 181px;
 	height: 50px;
-
 	text-align: center;
-	font-size: 26px;
-	font-weight: 500;
-	color: #000000;
 
 	position: relative;
 	top: 8px;
@@ -305,20 +346,33 @@ Bottom(Cart) Part
 	width: 1080px;
 	height: 344px;
 }
-#cart .body .purchase-button {
-	border: 0px;
+#cart .body .login-button {
 	background-color: #519d9e;
 	border-radius: 10px;
-	box-shadow: 4px 4px 4px rgba(0, 0, 0, .16);
-	width: 180px;
-	height: 275px;
-
-	text-align: center;
-	font-size: 28px;
-	font-weight: 500;
-	color: #ffffff;
+	box-shadow: inset 0 3px 6px rgba(0, 0, 0, .16);
+	width: 416px;
+	height: 105px;
 
 	position: relative;
+	margin: auto;
+	top: 120px;
+}
+#cart .body .login-button .login-text {
+	margin: auto;
+	padding-top: 30px;
+	text-align: center;
+	font-size: 28px;
+	color: #ffffff;
+}
+#cart .body .purchase-button {
+	background-color: #519d9e;
+	border-radius: 10px;
+	width: 181px;
+	height: 276px;
+	position: relative;
 	top: 40px;
-	left: 840px;
+	left : 840px;
+
+	text-align: center;
+	color: #fff;
 }
