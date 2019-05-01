@@ -3,7 +3,7 @@ import React from 'react';
 export default function CartItem({item, value}) {
     const{id,title,img, price,total, count}= item;
     const {cartinc, cartdec, removeItem}=value;
-    console.log('여긴 카트아이템',id)
+    console.log('여긴 카트아이템의 아이디',id)
     return(
         <div className="row my-1 text-capitalize text-center">
             <div className="col-10 mx-auto col-lg-2">

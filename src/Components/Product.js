@@ -51,6 +51,7 @@ export default class Product extends Component {
                             }}
                         </ProductConsumer>
                         </div>
+                        
 
 
                     </div>

@@ -15,7 +15,6 @@ class ProductProvider extends Component{
         viewOpen: false ,
         viewProduct: detailProduct,
         cartSubTotal:0,
-        cartTax:0,
         cartTotal:0
     }
 
@@ -59,7 +58,8 @@ class ProductProvider extends Component{
         product.total=price;
         this.setState(()=>{
             return {products: tempProducts, cart:[...this.state.cart, product]};
-        }, ()=>{console.log(this.state)
+        }, 
+        ()=>{this.addTotal();
         });
     }
     // Open quickview
@@ -88,6 +88,18 @@ class ProductProvider extends Component{
     }
     clearCart=()=>{
         console.log('모두제거')
+    }
+    addTotal =() =>{
+        let subTotal=0;
+        this.state.cart.map(item =>(subTotal += item.total));
+        const total= subTotal
+        this.setState(()=>{
+            return{
+                cartSubTotal:subTotal,
+                cartTotal:total
+            }
+        })
+
     }
     render(){
         return(
