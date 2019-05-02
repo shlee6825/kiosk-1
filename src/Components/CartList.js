@@ -12,3 +12,8 @@ export default function  CartList({value}) {
             </div>
         );
     }
+
+
+    // return value.products.map(product =>{
+    //     return <Product key={product.id} product=
+    //     {product}/>;

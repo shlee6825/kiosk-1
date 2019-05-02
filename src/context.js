@@ -14,8 +14,7 @@ class ProductProvider extends Component{
         cart:[],
         viewOpen: false ,
         viewProduct: detailProduct,
-        cartSubTotal:0,
-        cartTotal:0
+        cartTotal:0,
     }
 
     // Data에서 상품 정보 가져옴
@@ -41,26 +40,32 @@ class ProductProvider extends Component{
 
 
     // detailProduct를 무엇인지 정의해줍니다. 
-    handleDetail=(id) =>{
-        console.log('핸들',id)
-        const product= this.getItem(id);
-        this.setState(()=>{
-            return{detailProduct:product}
-        })
-    }
+    // handleDetail=(id) =>{
+    //     console.log('핸들',id)
+    //     const product= this.getItem(id);
+    //     this.setState(()=>{
+    //         return{detailProduct:product}
+    //     })
+    // }
     addToCart=(id)=>{
         let tempProducts= [...this.state.products];
         const index = tempProducts.indexOf(this.getItem(id));
         const product = tempProducts[index]
-        product.inCart =true;
         product.count=1;
         const price= product.price;
         product.total=price;
-        this.setState(()=>{
-            return {products: tempProducts, cart:[...this.state.cart, product]};
-        }, 
-        ()=>{this.addTotal();
-        });
+        if( product.inCart !==true){
+            product.inCart =true;
+            this.setState(()=>{
+                return {products: tempProducts, cart:[...this.state.cart, product]};
+            }, 
+            ()=>{this.addTotal()});
+        }else{
+            console.log('안녕하세요')
+        }
+        console.log('Addtocart인덱스',index)
+
+
     }
     // Open quickview
     openView = (id)=>{
@@ -77,25 +82,69 @@ class ProductProvider extends Component{
     
     //Cart
     cartinc=(id)=>{
-        console.log('카트에 넣기');
+        let tempCart= [...this.state.cart];
+        const cartChoice= tempCart.find(item => item.id ===id);
+        const index =tempCart.indexOf(cartChoice);
+
+        const product = tempCart[index];
+        product.count = product.count+1;
+        product.total = product.count * product.price;
+        
+        this.setState(()=>{return{cart:[...tempCart]}},()=>{this.addTotal()})
     }
     
     cartdec=(id)=>{
-        console.log('카트에 넣기');
+        let tempCart= [...this.state.cart];
+        const cartChoice= tempCart.find(item => item.id ===id);
+        const index =tempCart.indexOf(cartChoice);
+        const product = tempCart[index];
+
+        if (product.count===0){
+            this.removeItem(id);
+        }else{
+            product.count = product.count-1;
+            product.total = product.count * product.price;
+            this.setState(()=>{return{cart:[...tempCart]}},()=>{this.addTotal()})
+        }
     }
+
     removeItem=(id)=>{
+        let tempProducts= [...this.state.products];
+        let tempCart= [...this.state.cart];
+
+        tempCart=tempCart.filter(item => item.id !== id);
+        const index= tempProducts.indexOf(this.getItem(id));
+        let removeProduct= tempProducts[index];
+        removeProduct.inCart = false;
+        removeProduct.count = 0;
+        removeProduct.total = 0;
+        this.setState(()=>{
+            return{
+                cart: [...tempProducts],
+                products: [...tempProducts]
+            }
+        }, ()=>{
+            this.addTotal();
+        })
+
+
         console.log('제거넣기');
     }
     clearCart=()=>{
-        console.log('모두제거')
+        this.setState(()=> {
+            return {cart: []};
+        },
+        ()=>{
+            this.setProducts();
+            this.addTotal();
+        })
     }
     addTotal =() =>{
-        let subTotal=0;
+        let subTotal =0;
         this.state.cart.map(item =>(subTotal += item.total));
         const total= subTotal
         this.setState(()=>{
             return{
-                cartSubTotal:subTotal,
                 cartTotal:total
             }
         })
