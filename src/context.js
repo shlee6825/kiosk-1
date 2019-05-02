@@ -54,14 +54,14 @@ class ProductProvider extends Component{
         product.count=1;
         const price= product.price;
         product.total=price;
-        if( product.inCart !==true){
+        if( product.inCart ===false){
             product.inCart =true;
             this.setState(()=>{
                 return {products: tempProducts, cart:[...this.state.cart, product]};
             }, 
             ()=>{this.addTotal()});
         }else{
-            console.log('안녕하세요')
+            console.log('한번만 눌러라잉')
         }
         console.log('Addtocart인덱스',index)
 
@@ -80,7 +80,8 @@ class ProductProvider extends Component{
         })
     }
     
-    //Cart
+    //Cart Item에 다 들어있음
+    // 누르면 cart 갯수 증가, total은 갯수* 카트 가격
     cartinc=(id)=>{
         let tempCart= [...this.state.cart];
         const cartChoice= tempCart.find(item => item.id ===id);
@@ -89,25 +90,26 @@ class ProductProvider extends Component{
         const product = tempCart[index];
         product.count = product.count+1;
         product.total = product.count * product.price;
-        
         this.setState(()=>{return{cart:[...tempCart]}},()=>{this.addTotal()})
     }
-    
+    // 누르면 cart 갯수 감소, 0개 되면 카트에서 사라지게 함
+
     cartdec=(id)=>{
         let tempCart= [...this.state.cart];
         const cartChoice= tempCart.find(item => item.id ===id);
         const index =tempCart.indexOf(cartChoice);
         const product = tempCart[index];
 
-        if (product.count===0){
-            this.removeItem(id);
-        }else{
+        if (product.count!==1){
             product.count = product.count-1;
             product.total = product.count * product.price;
             this.setState(()=>{return{cart:[...tempCart]}},()=>{this.addTotal()})
+
+        }else{
+            this.removeItem(id);
         }
     }
-
+    // cart 아이템 하나씩만 제거( 휴지통 아이콘 )
     removeItem=(id)=>{
         let tempProducts= [...this.state.products];
         let tempCart= [...this.state.cart];
@@ -120,7 +122,7 @@ class ProductProvider extends Component{
         removeProduct.total = 0;
         this.setState(()=>{
             return{
-                cart: [...tempProducts],
+                cart: [...tempCart],
                 products: [...tempProducts]
             }
         }, ()=>{
@@ -130,6 +132,7 @@ class ProductProvider extends Component{
 
         console.log('제거넣기');
     }
+    // 전체 아이템 초기화 
     clearCart=()=>{
         this.setState(()=> {
             return {cart: []};
@@ -139,13 +142,13 @@ class ProductProvider extends Component{
             this.addTotal();
         })
     }
+    //  Total 아이템 갯수의 Total을 구함
     addTotal =() =>{
-        let subTotal =0;
-        this.state.cart.map(item =>(subTotal += item.total));
-        const total= subTotal
+        let Total =0;
+        this.state.cart.map(item =>(Total += item.total));
         this.setState(()=>{
             return{
-                cartTotal:total
+                cartTotal:Total
             }
         })
 
