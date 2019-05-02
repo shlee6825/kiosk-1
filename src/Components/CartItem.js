@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function CartItem({item, value}) {
     const{id,title,img, price,total, count}= item;
-    const {cartinc, cartdec, removeItem}=value;
+    const {cartinc, cartdec, removeItem, cartTotal, clearCart}=value;
     console.log('여긴 카트아이템의 아이디',id)
     return(
         <div className="row my-1 text-capitalize text-center">
@@ -31,14 +31,23 @@ export default function CartItem({item, value}) {
                     </div>
                 </div>
             </div>
-            <div className="col-10 mx-auto col-lg-2">
-                <div className="cart-icon" onClick={()=> removeItem(id)}>
-                <i className="fas fa-trash"/>
+                <div className="col-10 mx-auto col-lg-2">
+                    <div className="cart-icon" onClick={()=> removeItem(id)}>
+                    <i className="fas fa-trash"/>
                 </div>
-            <div className="col-10 mx-auto col-lg-2">
-                <strong> item total: ${total}</strong>
+                <div className="col-10 mx-auto col-lg-2">
+                    <strong> item total: ${total}</strong>
                 </div>
+
             </div>
+            <div>
+                    <strong>모든 가격의 합은?: ${cartTotal}</strong>
+                </div>
+                <div className="cart-??" onClick={()=> clearCart(id)}>
+                    <i className="fas fa-trash"/> 모든것을 제거한다
+                </div>
+
+            
         </div>
     )
 }

@@ -38,15 +38,7 @@ class ProductProvider extends Component{
         return product;
     } //id를 넣어주면 그 상품을 내놓음, id는 무엇일까? 
 
-
-    // detailProduct를 무엇인지 정의해줍니다. 
-    // handleDetail=(id) =>{
-    //     console.log('핸들',id)
-    //     const product= this.getItem(id);
-    //     this.setState(()=>{
-    //         return{detailProduct:product}
-    //     })
-    // }
+    // 누르면 Cart로 보냄,카트에 있으면 True, 등등 중요함
     addToCart=(id)=>{
         let tempProducts= [...this.state.products];
         const index = tempProducts.indexOf(this.getItem(id));
@@ -142,7 +134,7 @@ class ProductProvider extends Component{
             this.addTotal();
         })
     }
-    //  Total 아이템 갯수의 Total을 구함
+    //  Total 아이템 가격이 total 구함
     addTotal =() =>{
         let Total =0;
         this.state.cart.map(item =>(Total += item.total));
