@@ -1,5 +1,6 @@
 /* DB입니다 */
-
+//total 이랑
+//in Cart
 export const storeProducts = [
   {
     id: 1,

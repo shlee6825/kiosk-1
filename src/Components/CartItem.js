@@ -51,3 +51,21 @@ export default function CartItem({item, value}) {
         </div>
     )
 }
+
+
+// import './css/style.css'
+
+
+// <section id="cart">
+// <div className="cart-top">
+
+//     <div className="cancel-button" onClick={()=> clearCart(id)}>
+//         전체취소
+//     </div>
+// </div>
+// <div className="body">
+//     <div className="purchase-button">
+//         결제하기
+//     </div>
+// </div>            
+// </section>

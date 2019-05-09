@@ -10,11 +10,11 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component{
     state={
         products: [], //모든 db의 item이 들어가 있습니다.  
-        detailProduct: detailProduct, // 특정 item만 불러오고 싶다
         cart:[],
         viewOpen: false ,
         viewProduct: detailProduct,
         cartTotal:0,
+        loginOpen:false
     }
 
     // Data에서 상품 정보 가져옴
@@ -53,12 +53,24 @@ class ProductProvider extends Component{
             }, 
             ()=>{this.addTotal()});
         }else{
-            console.log('한번만 눌러라잉')
+            this.cartinc(id);
         }
         console.log('Addtocart인덱스',index)
 
 
     }
+
+    openLogin= ()=>{
+        this.setState(()=>{
+            return {loginOpen: true}
+        })
+    }
+    closeLogin= ()=>{
+        this.setState(()=>{
+            return{ loginOpen : false}
+        })
+    }
+
     // Open quickview
     openView = (id)=>{
         const product = this.getItem(id);
@@ -150,14 +162,15 @@ class ProductProvider extends Component{
         /*provide value는  value의 값들을 자식들에게 전해줌 */
         <ProductContext.Provider value={{  
                 ...this.state, 
-                handleDetail: this.handleDetail,
                 addToCart: this.addToCart,
                 openView: this.openView,
                 closeView: this.closeView,
                 cartinc: this.cartinc,
                 cartdec: this.cartdec,
                 removeItem: this.removeItem,
-                clearCart: this.clearCart
+                clearCart: this.clearCart,
+                openLogin: this.openLogin,
+                closeLogin: this.closeLogin
             }}>
                 {this.props.children}
 

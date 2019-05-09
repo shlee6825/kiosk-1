@@ -39,64 +39,10 @@ body {
   font-family: "Lato", sans-serif;
   color: #333333;
   font-size: 16px;
-}
-ul {
-  float: left;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: #333333;
-}
-a:hover,
-a:focus {
-  outline: none;
-  text-decoration: none;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
-}
-
-h2 {
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 40px;
-  margin: 0;
-  padding-bottom: 10px;
-}
-img {
-  border: none;
-}
-button {
-	border: 0px;
+  overflow: hidden;
 }
 
 
-
-/*
-
-Top(Header) Part
-
-*/
-
-html {
-	width: 1080px;
-	height: 1920px;
-	overflow-x: scroll;
-}
-
-body {
-  width: 1080px;
-  margin: 0px;
-  background-color: #ffffff;
-  font-family: "Lato", sans-serif;
-  color: #333333;
-  font-size: 16px;
-}
 ul {
   float: left;
   padding: 0;
@@ -179,14 +125,18 @@ Top(Header) Part
 #header .category li {
 	float: left;
 }
+/* 수정된 부분 */
 #header .category li .category-button {
 	display: inline-block;
+
 	border-width: 1px;
 	background-color: #e4e7e8;
 	width: 270px;
 	height: 80px;
+	margin: 0px;
+	
 
-	text-align: center;
+	vertical-align: middle;
 	color: #b1b1b1;
 	font-size: 30px;
 	font-weight: 500;
@@ -201,7 +151,7 @@ Top(Header) Part
 	border-radius: 8px;
 	background-color: #ffffff;
 	width: 700px;
-	height: 56px;
+	height: 60px;
 	position: relative;
 	top: 10px;
 	left: 190px;
@@ -213,14 +163,13 @@ Top(Header) Part
 	text-align: center;
 }
 #header .find .search-button {
-	border: solid #b1b1b1;
 	border-width: 2px;
-	border-radius: 4px;
-	background-color: transparent;
+	border-radius: 10px;
+	background-color: #e4e7e8;
 	height: 50px;
 	width: 80px;
 	position: relative;
-	top: 18px;
+	top: 6px;
 	left: 100px;
 }
 #header .find .search-button img {
@@ -238,7 +187,6 @@ Middle(Product) Part
 	width: 1080px;
 	height: 1150px;
 	background-color: #f0f3f4;
-	overflow: auto;
 }
 #product .menu {
 	width: 1080px;
@@ -246,59 +194,95 @@ Middle(Product) Part
 	background-color: #9dc7c8;
 	overflow: auto;
 }
-#product .menu .menu-button {
-	padding-top: 12px;
+#product .menu li {
+	float: left;
+}
+#product .menu li .menu-button {
 	display: inline-block;
-	margin-left: 35px;
-	margin-right: 35px;
+	border-width: 1px;
+	background-color: transparent;
+	width: 135px;
+	height: 60px;
+
+	text-align: center;
+	overflow: hidden;
 	font-size: 26px;
 	font-weight: 500;
 }
 #product .menu a {
 	color: #f2efef;
+	overflow: hidden;
+	white-space: nowrap;
 }
-#product .container {
-	margin-top: 55px;
+ /* Product Contents */
+/* 난 map을 쓰기떄문에 전체를 만들고 안에 넣어야함 */
+#product .box{
+	
+	width: 1080px;
+	height: 1090px;
+	overflow-y: auto;
+
+	padding-top: 30px;
+	padding-bottom: 30px;
 	margin-left: 50px;
 	margin-right: 50px;
 }
+/* #product .container {
+	이건 귀찮으니 나중에하죠
+	
+
+} */ 
 #product .container .item {
-	display: inline;
 	float: left;
 	width: 300px;
-	height: 320px;
+	height: 350px;
 	background-color: #ffffff;
 	border-radius: 10px;
 	box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
 	margin: 10px;
 }
-#product .container .item .image {
-	height: 40px;
-	width: auto;
+#product .container .item .item-image {
+	float: auto;
+	height: 240px;
+	width: 280px;
+	margin: auto;
+	padding: auto;
+	background-color: transparent;
+
 }
-#product .container .item .image_area{
-	height: 200px;
-	width: auto;
-	max-height: 100%;
-	max-width: 100%;
+#product .container .item .lookdetail {
+	
+	float: left;
+	width: 70px;
+	height: 70px;
+	border-radius: 10px;
+	background-color: #e4e7e8;
+	margin-top: 15px;
+	margin-left: 10px;
+	margin-right: 20px;
+	margin-bottom: 10px;
 }
 #product .container .item .description {
+	padding-top: 10 px;
 	height: 80px;
+	margin-right: 20 px;
 }
 #product .container .item .description .name {
 	font-size: 16px;
 	font-weight: 700;
 	color: #303336;
-	position: relative;
-	text-align: right;
-	right: 10px;
+	position: auto;
+	text-align: left !important;
+	margin-right: 30px;
+	overflow: auto;
+	
 }
 #product .container .item .description .price {
 	font-weight: 500;
 	color: #7b8591;
+	position: auto;
 	text-align: right;
-	position: relative;
-	right: 18px;
+	left: 90px;
 }
 
 /*

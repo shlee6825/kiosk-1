@@ -3,29 +3,54 @@ import React from 'react';
 
 export default function  CartTable() {
         return(
+         
+// <section id="cart">
+//  <div className="cart-top">
+ //     <div className="cancel-button" onClick={()=> clearCart(id)}> 
+ //         전체취소 
+ //     </div>   
             <div className="container-fluid text-center d-none d-lg-block">
                 
                 <div className="row">
-                <div className="col-10 mx-auto col-lg-2">
-                <p className="text-uppercase">products</p>
+                <div className="col-10 mx-left col-lg-2">
+                <p className="text-uppercase">사진</p>
                 </div>
-                <div className="col-10 mx-auto col-lg-2">
-                <p className="text-uppercase">name of product</p>
+                <div className="col-10 mx-left col-lg-2">
+                <p className="text-uppercase">상품명</p>
                 </div>
-                <div className="col-10 mx-auto col-lg-2">
-                <p className="text-uppercase">price</p>
+                <div className="col-10 mx-left col-lg-2">
+                <p className="text-uppercase">가격</p>
                 </div>
-                <div className="col-10 mx-auto col-lg-2">
-                <p className="text-uppercase">quintity</p>
+                <div className="col-10 mx-left col-lg-2">
+                <p className="text-uppercase">수량</p>
                 </div>
 
-                <div className="col-10 mx-auto col-lg-2">
-                <p className="text-uppercase">reomve</p>
+                <div className="col-10 mx-left col-lg-2">
+                <p className="text-uppercase">취소</p>
                 </div>
-                <div className="col-10 mx-auto col-lg-2">
-                <p className="text-uppercase">total</p>
+                <div className="col-10 mx-left col-lg-2">
+                <p className="text-uppercase">총 수량</p>
                 </div>
                 </div>
             </div>
+            // </div>
+            // </section>
         )
     }
+    
+// import './css/style.css'
+
+
+// <section id="cart">
+// <div className="cart-top">
+
+//     <div className="cancel-button" onClick={()=> clearCart(id)}>
+//         전체취소
+//     </div>
+// </div>
+// <div className="body">
+//     <div className="purchase-button">
+//         결제하기
+//     </div>
+// </div>            
+// </section>
