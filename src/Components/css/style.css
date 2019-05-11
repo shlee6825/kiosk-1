@@ -295,68 +295,122 @@ Bottom(Cart) Part
 #cart {
 	width: 1080px;
 	height: 410px;
+
 	bottom: 0px;
 	font-size: 26px;
-	background-color: #ffffff;
 }
 #cart .cart-top {
 	height: 66px;
 	background-color: #9dc7c8;
 }
-#cart .cart-top .top-text {
-	text-align: center;
-	font-size: 28px;
-	font-weight: 500;
-	color: #ffffff;
-
-	position: relative;
-	top: 20%;
-	vertical-align: middle;
-	margin: auto;
+#cart .cart-top .orderlist {
+	margin-left: 62px;
+	padding-top: 17px;
+}
+#cart .cart-top .orderlist .title {
+	width: 280px;
+	float: left;
+}
+#cart .cart-top .orderlist .count {
+	width: 149px;
+	float: left;
+}
+#cart .cart-top .orderlist .price {
+	width: 200px;
+	margin-left: 16px;
 }
 #cart .cart-top .cancel-button {
+	border: 0px;
 	background-color: #f0f3f4;
 	border-radius: 10px;
-	width: 181px;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, .16);
+	width: 180px;
 	height: 50px;
-	text-align: center;
 
-	position: relative;
-	top: 8px;
+	text-align: center;
+	font-size: 26px;
+	font-weight: 500;
+	color: #000000;
+
+	position: absolute;
+	top: 1518px;
 	left: 840px;
 }
 #cart .body {
 	background-color: #e4e7e8;
 	width: 1080px;
 	height: 344px;
+	overflow-y: scroll;
 }
-#cart .body .login-button {
-	background-color: #519d9e;
-	border-radius: 10px;
-	box-shadow: inset 0 3px 6px rgba(0, 0, 0, .16);
-	width: 416px;
-	height: 105px;
+#cart .body .cartlist {
+	height: 30px;
+	font-size: 26px;
 
-	position: relative;
-	margin: auto;
-	top: 120px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	margin-left: 62px;
 }
-#cart .body .login-button .login-text {
-	margin: auto;
-	padding-top: 30px;
+#cart .body .cartlist .title {
+	width: 380px;
+	float: left;
+	color: #555555;
+}
+#cart .body .cartlist .decrease-button {
+	width: 33px;
+	height: 33px;
+	border-radius: 10px;
+	background-color: #555555;
+	float: left;
 	text-align: center;
-	font-size: 28px;
-	color: #ffffff;
+	font-size: 20px;
+}
+#cart .body .cartlist .count {
+	width: 50px;
+	float: left;
+	color: #1c7374;
+	text-align: center;
+}
+#cart .body .cartlist .increase-button {
+	width: 33px;
+	height: 33px;
+	border-radius: 10px;
+	background-color: #555555;
+	float: left;
+	text-align: center;
+	font-size: 20px;
+}
+#cart .body .cartlist .price {
+	width: 150px;
+	float: left;
+	text-align: right;
+	color: #1c7374;
+
+	padding-right: 30px;
+}
+#cart .body .cartlist .cancel-button {
+	width: 33px;
+	height: 33px;
+	background-color: #555555;
+	border-radius: 10px;
+	box-shadow: outset 0 1px 2px rgba(0, 0, 0, .16);
 }
 #cart .body .purchase-button {
+	border: 0px;
 	background-color: #519d9e;
 	border-radius: 10px;
-	width: 181px;
-	height: 276px;
-	position: relative;
-	top: 40px;
-	left : 840px;
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, .16);
+	width: 180px;
+	height: 275px;
 
 	text-align: center;
-	color: #fff;
+	font-size: 28px;
+	font-weight: 500;
+	color: #ffffff;
+
+	position: absolute;
+	top: 1608px;
+	left: 840px;
+}
+#cart .body .purchase-button img {
+	width: 100px;
 }

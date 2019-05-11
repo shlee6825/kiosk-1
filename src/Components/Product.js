@@ -14,44 +14,23 @@ import PropTypes from 'prop-types'
 
 export default class Product extends Component {
     ItemView() {
-        const { id, title, img, price, inCart } = this.props.product;
+        const { id, title, img, price, viewOpen } = this.props.product;
         const fixid = id
 
         return (
             <ProductConsumer>
                 {(value) => {
                     return (
-                        // <div>
-                        //     <ButtonContainer
-                        //         disabled={inCart ? true : false}
-                        //         onClick={() => {
-                        //             value.openView(fixid);
-                        //         }}>
-                        //         <img src={logo} />
-                        //         상세 설명으로 가자
-                        //     </ButtonContainer>
 
-                        //     {/* 이건 상품을 카트에 넣는 부분 */}
-                        //     <button onClick={() => {
-                        //         value.addToCart(id);
-                        //     }}>
-                        //         <img src={img} className='image_area' />
-
-                        //         <div className="description">
-                        //             <div className="name">{title}</div>
-                        //             <div className="price">{price}</div>
-                        //         </div>
-                        //     </button>
-                        // </div>
-
-                            <button className="item" onClick={() => {
+                            <button className="item" 
+                            disabled={viewOpen ? true : false}  
+                            onClick={() => {
                                 value.addToCart(id);
                                 }}>
                                 <div className="item-image" >
                                     <img src={img} className="item-image" />
                                 </div>
                                 <button className="lookdetail"
-                                    disabled={inCart ? true : false}
                                     onClick={() => {
                                         value.openView(fixid);
                                     }}>

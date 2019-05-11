@@ -1,6 +1,3 @@
-// 전역 변수를 하위 파일로 보내기 위해서 만듦 (ex db 변경값 등) 
-//하위에 파일에 직접 전달하고 받음! 더 효율적인 API
-// Consumer 은 컴포넌트에 context 사용할 때 필요
 
 import React, {Component} from 'react'
 import {storeProducts, detailProduct} from './data';
@@ -14,7 +11,12 @@ class ProductProvider extends Component{
         viewOpen: false ,
         viewProduct: detailProduct,
         cartTotal:0,
-        loginOpen:false
+        // loginOpen:false
+
+        // Finder
+
+        message: "검색어를 입력하세요",
+
     }
 
     // Data에서 상품 정보 가져옴
@@ -55,9 +57,7 @@ class ProductProvider extends Component{
         }else{
             this.cartinc(id);
         }
-        console.log('Addtocart인덱스',index)
-
-
+     
     }
 
     openLogin= ()=>{

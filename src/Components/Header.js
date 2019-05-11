@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import './css/style.css';
 import finder from './css/finder.svg';
 import {Link} from 'react-router-dom'
+import { ProductConsumer } from '../context';
 
 
 export default class Header extends Component {
-	state = {
-		message: "검색어를 입력하세요",
-	}
 
 	navigator() {
 		var buttons = ["상점", "의사추천", "헬로우", "월드"]
@@ -29,13 +27,20 @@ export default class Header extends Component {
 
 	finder() {
 			return (
-				<div className="find">
-					<input className="search-box" type="text" placeholder={this.state.message} />
-					<button className="search-button"><img src={finder}/></button>
-				</div>
+				<ProductConsumer>
+					{(value)=>{
+                    const {message} =value;
+						return(
+						<div className="find">
+							<input className="search-box" type="text" placeholder={message} />
+							<button className="search-button"><img src={finder}/></button>
+						</div>
+
+						)
+					}}
+				</ProductConsumer>
 			)
 		}
-	
 	render() {
 		return 	(
 			<header id="header">
