@@ -29,11 +29,34 @@ export default class ProductList extends Component {
             <div className="box">
             <ProductConsumer>
                 {value => {
-                    return value.products.map(product => {
-                        return <Product key={product.id} product=
-                            {product} />;
-                    })
-                }}
+
+                    if (value.message=="검색어를 입력하세요"){
+                        return value.products.map(product => {
+                            return <Product key={product.id} product=
+                                {product} />;
+                        })
+
+                    }else{
+                        // value.findItem(value.message)
+                        // return value.currentItemList.map(product=>{
+                        //     return <Product key={product.id} product={product}/> 
+                        // })
+                        value.findItem();
+                        // return value.currentItemList.map(product => {
+                        //     return <Product key={product.id} product=
+                        //         {product} />;
+
+                        // })
+                        
+                    }
+                    
+                        
+                }
+            }
+            {/* return value.currentItemList.map(product=>{
+                            return <Product key={product.id} product={product}/>
+                        }) */}
+
 
             </ProductConsumer>
             </div>

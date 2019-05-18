@@ -29,13 +29,13 @@ export default class Header extends Component {
 			return (
 				<ProductConsumer>
 					{(value)=>{
-                    const {message} =value;
+					const {message} =value;
 						return(
 						<div className="find">
-							<input className="search-box" type="text" placeholder={message} />
+							<input className="search-box" type="text" placeholder={message} onChange={
+								(e)=> value.handlingChange(e.target.value)} />
 							<button className="search-button"><img src={finder}/></button>
 						</div>
-
 						)
 					}}
 				</ProductConsumer>
