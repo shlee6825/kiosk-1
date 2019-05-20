@@ -4,11 +4,6 @@ import React from 'react';
 export default function  CartTable() {
         return(
          
-// <section id="cart">
-//  <div className="cart-top">
- //     <div className="cancel-button" onClick={()=> clearCart(id)}> 
- //         전체취소 
- //     </div>   
             <div className="container-fluid text-center d-none d-lg-block">
                 
                 <div className="row">
@@ -33,8 +28,6 @@ export default function  CartTable() {
                 </div>
                 </div>
             </div>
-            // </div>
-            // </section>
         )
     }
     

@@ -11,12 +11,11 @@ class ProductProvider extends Component {
         viewOpen: false,
         viewProduct: detailProduct,
         cartTotal: 0,
+        cartnum:0,
         // Login
         // loginOpen:false
 
         // Finder
-        currentItemList: [],
-
         message: "검색어를 입력하세요",
 
     }
@@ -39,7 +38,6 @@ class ProductProvider extends Component {
     getItem = (id) => {
 
         const product = this.state.products.find(item => item.id === id)
-        console.log(product)
         return product;
     } //id를 넣어주면 그 상품을 내놓음, id는 무엇일까? 
 
@@ -50,6 +48,8 @@ class ProductProvider extends Component {
         const product = tempProducts[index]
         product.count = 1;
         const price = product.price;
+        this.state.cartnum+=1;
+
         product.total = price;
         if (product.inCart === false) {
             product.inCart = true;
@@ -93,6 +93,8 @@ class ProductProvider extends Component {
         let tempCart = [...this.state.cart];
         const cartChoice = tempCart.find(item => item.id === id);
         const index = tempCart.indexOf(cartChoice);
+        this.state.cartnum+=1
+
 
         const product = tempCart[index];
         product.count = product.count + 1;
@@ -111,9 +113,13 @@ class ProductProvider extends Component {
             product.count = product.count - 1;
             product.total = product.count * product.price;
             this.setState(() => { return { cart: [...tempCart] } }, () => { this.addTotal() })
+            this.state.cartnum-=1
+
 
         } else {
             this.removeItem(id);
+            this.state.cartnum-=1
+
         }
     }
     // cart 아이템 하나씩만 제거( 휴지통 아이콘 )
@@ -141,8 +147,10 @@ class ProductProvider extends Component {
     }
     // 전체 아이템 초기화 
     clearCart = () => {
+
         this.setState(() => {
-            return { cart: [] };
+            return { cart: [] , cartnum:0 };
+    
         },
             () => {
                 this.setProducts();
@@ -173,52 +181,8 @@ class ProductProvider extends Component {
                 return { message: e }
             }
         }
-
         )
-        console.log("upDate message", this.state.message)
     }
-    // message랑 일치하는 것이 있으면 currentItemList에 넣어버림, id랑 다른것도 검색구현, onchange에서 받아와야함
-    findItem=() =>{
-            const curProduct=[]
-
-            storeProducts.forEach((item)=>{
-            if(item.title.indexOf(this.state.message) >-1){
-                console.log(item.title)
-                curProduct.push(item)
-                this.setState(()=>{
-                     return{currentItemList: curProduct}
-                 }
-                )
-                
-        }else{
-            return {}
-        }
-            })
-        console.log("파인드",this.state.message)
-        console.log("파인딩", this.state.currentItemList)
-
-    }
-    //ㄴ
-    
-
-    // storeProducts.forEach(item => {
-    //     const singleItem = { ...item };
-    //     tempProducts = [...tempProducts, singleItem] //    
-    // })
-
-    // productItem() {
-    // 	var currentItemList = []
-    // 	storeProducts.forEach(function(item) {
-    //         if (this.state.message.length>0){
-    // 		if (item.id.indexOf(this.state.message) > -1)
-    // 			return{
-    //                 currentItemList: currentItemList.push(new item)
-    //             }
-    //         }else{
-    //             return{}
-    //         }
-    // 	});
-    // }
 
 
     render() {

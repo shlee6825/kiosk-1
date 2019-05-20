@@ -1,4 +1,4 @@
-/*이 부분은 나중에 색 추가 해도 됩니다*/
+ 이 부분은 나중에 색 추가 해도 됩니다
 :root{
   --mainBlue:#3b3b81;
   --lightBlue:#009ffd;
@@ -45,5 +45,4 @@ text-transform: uppercase;
   font: size 1.2rem;
   color: var(--mainYellow);
 
-}
-
+} 

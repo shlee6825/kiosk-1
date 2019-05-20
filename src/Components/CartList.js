@@ -5,15 +5,10 @@ export default function  CartList({value}) {
     const {cart} =value;
     console.log('CartList지롱',{cart})
         return(
-            <div className="container-fluid">
+            <div>
                 {cart.map(item=>{
                      return <CartItem key={item.id} item={item} value={value}/> 
                 })}
             </div>
         );
     }
-
-
-    // return value.products.map(product =>{
-    //     return <Product key={product.id} product=
-    //     {product}/>;

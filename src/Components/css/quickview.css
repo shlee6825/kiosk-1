@@ -1,0 +1,128 @@
+/*
+
+Quickview
+
+*/
+
+#quickview {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 1920px;
+	width: 1080px;
+	background: rgba(0, 0, 0, 0.6);
+}
+#quickview .header {
+	position: relative;
+	height: 70px;
+	border-radius: 10px 10px 0px 0px;
+	background-color: #519d9e;
+
+	font-size: 28px;
+	color: #ffffff;
+	padding: 10px;
+}
+#quickview .header .title{
+	position: relative;
+	top: 18px;
+	left: 70px;
+}
+#quickview .header button {
+	position: relative;
+	top: 15px;
+	left: 480px;
+	width: 33px;
+	height: 33px;
+	background-color: #555555;
+	border-radius: 10px;
+	box-shadow: outset 0 1px 2px rgba(0, 0, 0, .16);
+}
+#quickview .body {
+	position: relative;
+	height: 900px;
+	padding-top: 30px;
+	margin-left: 70px;
+	margin-right: 70px;
+}
+#quickview .body img {
+	float: left;
+}
+#quickview .body .title {
+	font-size: 30px; 
+}
+#quickview .body .price {
+	font-size: 23px;
+}
+#quickview .body .info {
+	font-size: 23px;
+}
+#quickview .body .cartlist .title {
+	width: 200px;
+	float: left;
+	color: #555555;
+}
+#quickview .body .cartlist .decrease-button {
+	width: 33px;
+	height: 33px;
+	border-radius: 10px;
+	background-color: #555555;
+	float: left;
+	text-align: center;
+	font-size: 20px;
+}
+#quickview .body .cartlist .count {
+	width: 50px;
+	float: left;
+	color: #1c7374;
+	text-align: center;
+	font-size: 20px;
+	padding-top: 5px;
+}
+#quickview .body .cartlist .increase-button {
+	width: 33px;
+	height: 33px;
+	border-radius: 10px;
+	background-color: #555555;
+	float: left;
+	text-align: center;
+	font-size: 20px;
+}
+#quickview .body .cartlist .price {
+	width: 150px;
+	float: left;
+	text-align: right;
+	color: #1c7374;
+
+	padding-right: 30px;
+	padding-top: 5px;
+	font-size: 20px;
+}
+#quickview .body .cartlist .cancel-button {
+	width: 33px;
+	height: 33px;
+	background-color: #555555;
+	border-radius: 10px;
+	box-shadow: outset 0 1px 2px rgba(0, 0, 0, .16);
+}
+#quickview .bottom {
+	position: relative;
+	margin-left: 200px;
+}
+#quickview .bottom button {
+	width: 150px;
+	height: 50px;
+	color: #ffffff;
+	border-radius: 5px;
+	font-size: 18px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+}
+#quickview .bottom .return {
+	background-color: #9dc7c8;
+	margin-right: 20px;
+}
+#quickview .bottom .addCart {
+	background-color: #519d92;
+}
